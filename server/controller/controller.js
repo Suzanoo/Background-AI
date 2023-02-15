@@ -10,11 +10,15 @@ const openai = new OpenAIApi(configuration);
 // EXECUTION
 // https://platform.openai.com/docs/guides/images/usage
 const imgGenerate = async (req, res) => {
+  const { prompt, size } = req.body;
+  const imgSize =
+    size === 'small' ? '256x256' : size === 'medium' ? '512x512' : '1024x1024';
+
   try {
     const response = await openai.createImage({
-      prompt: 'all alone in the moon light in chinese art',
+      prompt,
       n: 1,
-      size: '256x256',
+      size: imgSize,
     });
 
     const image_url = response.data.data[0].url;
