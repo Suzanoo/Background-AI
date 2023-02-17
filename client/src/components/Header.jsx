@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 function Header() {
   return (
-    <header className="header">
+    <header className="header sticky">
       <div className="company-logo">D</div>
       <nav className="navbar">
         <ul className="nav-items">

@@ -4,10 +4,15 @@ import axios from 'axios';
 const API_URL = 'openai';
 
 const generateImage = async (data) => {
-  const respons = await axios.post(API_URL + '/img-gen', data);
+  const response = await axios.post(API_URL + '/img-gen', data);
 
-  if (respons) localStorage.setItem('image');
-  return respons;
+  if (response) {
+    const imgUrl = JSON.stringify(response.data);
+    localStorage.setItem('images', imgUrl);
+    console.log(imgUrl);
+  }
+
+  return response.data;
 };
 
 // Services
