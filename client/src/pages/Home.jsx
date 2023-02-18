@@ -86,7 +86,6 @@ function Home() {
                 <option value="Medium"> 512 x 512</option>
                 <option value="Large"> 1024 x 1024</option>
               </select>
-              <label className="text-3"> Image Size</label>
               <button type="submit" id="btn-1">
                 Generate
               </button>
@@ -144,5 +143,3 @@ function Home() {
 }
 
 export default Home;
-
-// Chinese elder is talking to his cat in abstract Chinese art

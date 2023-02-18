@@ -1,18 +1,17 @@
 import { Link } from 'react-router-dom';
+import { FaGithub } from 'react-icons/fa';
 
 function Footer() {
   return (
     <footer className="footer">
-      <div className="footer-items">
-        <ul>
-          <li>
-            <Link to="https://www.facebook.com/">Facebook</Link>
-          </li>
-          <li>
-            <Link to="https://github.com/">GitHub</Link>
-          </li>
-        </ul>
-      </div>
+      <span className="text-2">
+        I tried and failed. I tried again and again.
+      </span>
+      <span>
+        <Link to="https://github.com/">
+          <FaGithub />
+        </Link>
+      </span>
     </footer>
   );
 }
