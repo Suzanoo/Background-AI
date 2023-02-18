@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import Spinner from '../components/Spinner';
 import { reset, generateImages } from '../features/images/imageSlice';
@@ -18,7 +18,6 @@ function Home() {
   const { prompt, size } = formFields;
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   // 3).Access states in store and parse to variables
   const { images, isLoading, isError, isSuccess, message } = useSelector(
@@ -31,14 +30,8 @@ function Home() {
       toast.error(message);
     }
 
-    // if (isSuccess) {
-    //   const imgUrl = images;
-    //   document.querySelector('#image').src = imgUrl;
-    //   navigate('/');
-    // }
-
     dispatch(reset());
-  }, [images, isLoading, isError, isSuccess, message, navigate, dispatch]);
+  }, [images, isLoading, isError, isSuccess, message, dispatch]);
 
   const onChange = (e) => {
     setFormFields((prevState) => ({
@@ -86,46 +79,19 @@ function Home() {
                 <option value="Medium"> 512 x 512</option>
                 <option value="Large"> 1024 x 1024</option>
               </select>
-              <button type="submit" id="btn-1">
+              <button type="submit" id="">
                 Generate
               </button>
             </form>
+            <button id="">
+              <Link to={images.data} target="_blank">
+                Download
+              </Link>
+            </button>
           </div>
         </section>
 
-        {/* <section className="showcase">
-          <p className="text-1">I tried and failed. I tried again and again.</p>
-
-          <form onSubmit={onSubmit}>
-            <div className="user-box">
-              <input
-                type="text"
-                className=""
-                placeholder="  Image Description..."
-                id="prompt"
-                name="prompt"
-                value={prompt}
-                onChange={onChange}
-              ></input>
-            </div>
-
-            <div>
-              <select name="size" id="size" value={size} onChange={onChange}>
-                <option value="Small" selected>
-                  256 x 256
-                </option>
-                <option value="Medium"> 512 x 512</option>
-                <option value="Large"> 1024 x 1024</option>
-              </select>
-              <label className="text-3"> Image Size</label>
-            </div>
-
-            <button type="submit" id="btn-1">
-              Generate
-            </button>
-          </form>
-        </section> */}
-        <section className="">
+        {/* <section className="">
           {images != null ? (
             <img src={images.data} alt="" id="image" className="bg" />
           ) : (
@@ -136,7 +102,7 @@ function Home() {
               className="bg"
             />
           )}
-        </section>
+        </section> */}
       </div>
     </>
   );

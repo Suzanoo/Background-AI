@@ -8,7 +8,7 @@ function Footer() {
         I tried and failed. I tried again and again.
       </span>
       <span>
-        <Link to="https://github.com/">
+        <Link to="https://github.com/Suzanoo">
           <FaGithub />
         </Link>
       </span>

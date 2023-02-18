@@ -1,9 +1,11 @@
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 function Header() {
   return (
     <header className="header sticky">
-      <div className="company-logo">D</div>
+      <div className="company-logo">
+        <Link>D</Link>
+      </div>
       <nav className="navbar">
         <ul className="nav-items">
           <li className="nav-item">

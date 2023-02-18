@@ -174,22 +174,6 @@ header {
 /* ================= FORM & IMAGE ================ */
 /* https://codepen.io/soufiane-khalfaoui-hassani/pen/LYpPWda */
 
-.bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-
-  /* Preserve aspet ratio */
-  min-width: 100%;
-  min-height: 100%;
-}
-
-.bg img {
-  max-width: 100%;
-  height: auto;
-}
-
 .form-container {
   position: absolute;
   bottom: 0;

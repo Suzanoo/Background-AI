@@ -7,9 +7,12 @@ const generateImage = async (data) => {
   const response = await axios.post(API_URL + '/img-gen', data);
 
   if (response) {
-    const imgUrl = JSON.stringify(response.data);
-    localStorage.setItem('images', imgUrl);
-    console.log(imgUrl);
+    const item = JSON.stringify(response.data);
+    localStorage.setItem('images', item);
+    console.log(item);
+
+    // set background image
+    document.body.style.backgroundImage = `url(${response.data.data})`;
   }
 
   return response.data;

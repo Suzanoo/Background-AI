@@ -25,4 +25,4 @@ function App() {
 
 export default App;
 
-// Chinese ekder is talking to his cat abstract traditional  Chinese art
+// Chinese elder is talking to his cat abstract traditional Chinese art
